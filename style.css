@@ -1,149 +1,135 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
-:root {
-  --container-height: 600px;
-  --contaier-width: 400px;
-  --header-height: 150px;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Ubuntu", monospace;
-}
-html {
-  font-size: 20px;
-}
+/* *,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", monospace;
+} */
 
 body {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-  background-color: antiquewhite;
-  width: var(--contaier-width);
-  height: var(--container-height);
-
-  position: relative;
-  overflow: hidden;
-}
-header {
-  width: 100%;
-  height: var(--header-height);
-  background-image: url("./img/bg.jpg");
-  background-size: cover;
-  border-radius: 5px 5px 0 0;
+  /* width: 100%; */
+  background: #1e1e1e;
+  color: white;
 }
 .header {
+  text-align: center;
+  letter-spacing: 0.2em;
+}
+main {
+  max-width: 400px;
   width: 100%;
-  height: 100px;
+  margin: 0 auto;
+  padding: 1em;
+}
+form {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  padding: 2em 0;
 }
-.new-todo {
-  width: 100%;
-  height: 50px;
-  padding: 0.25rem 0;
+input {
+  background: #1f2937;
+  border: 1px solid #ffffff;
+  border-radius: 1em;
+  padding: 1em 2em;
+  width: 50%;
+  margin-bottom: 1em;
 }
-.new-todo form {
+button {
+  background: linear-gradient(
+    90deg,
+    #ec4899 0%,
+    #8b5cf6 100%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  border: none;
+  line-height: 32px;
+}
+.todo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 70%;
+  background-color: #111827;
+  padding: 0 1em;
+  border-radius: 0.6em;
+  margin: 1em 0;
 }
-.new-todo form input {
-  flex: 1;
-  height: 40px;
-  background-color: transparent;
-  border: none;
-  border-right: 0px;
-  outline: transparent;
-  padding-left: 0.5rem;
-  font-size: 1rem;
-  color: #fff;
-}
-.new-todo form button {
-  width: 60px;
-  height: 40px;
-  font-size: 1rem;
-  background-color: transparent;
-  color: blue;
-  border: none;
-  border-left: 0px;
-  cursor: pointer;
-}
-.new-todo form button:hover {
-  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
-}
-
-#todos-list {
-  height: calc(var(--container-height) - var(--header-height));
-  background-color: #fff;
-  padding: 0.5rem;
-  border: 1px solid rgb(219, 219, 219);
-  overflow: scroll;
-  border-radius: 0 0 5px 5px;
-}
-
-#todos-list .todo {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 0.5rem;
-  border-radius: 5px;
-}
-#todos-list .todo:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-#todos-list .todo * {
+.todo * {
   cursor: pointer;
   margin-right: 0.5rem;
 }
-#todos-list .todo i {
-  font-size: 0.9rem;
+.todo i {
+  font-size: 0.9em;
 }
-#todos-list .todo p {
+.todo p {
   flex: 1;
-  word-break: break-all;
 }
 .checked {
   text-decoration: line-through;
-  color: grey;
+  color: purple;
 }
-#todos-list .todo .bi-pencil-square {
+.fa-pen-to-square {
   color: rgb(31, 177, 48);
+  margin-right: 0;
 }
-#todos-list .todo .bi-trash {
+.fa-trash-can {
   color: crimson;
-  margin: 0;
+  margin-left: 0;
 }
-
 .notification {
-  position: absolute;
-
-  width: calc(3 * var(--contaier-width) / 4);
-  height: 60px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0.9;
-
-  border-radius: 8px;
-  background-color: crimson;
-  top: 10px;
-  right: calc(-3 * var(--contaier-width) / 4);
-
-  color: #fff;
-
+  background: crimson;
   transition: 300ms right ease-in-out;
+  padding: 0.5em 1em;
+  color: white;
+  opacity: 0.9;
+  border-radius: 0.4em;
+  margin-bottom: 1em;
+  right: calc(-3 * 400px / 4);
+}
+.hide {
+  display: none;
 }
 
-.notif-enter {
-  right: 10px;
+@media (min-width: 60rem) {
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  input {
+    width: 60%;
+    border: none;
+  }
+  button {
+    border: 1px solid purple;
+    padding: 0.5em 1em;
+    font-size: 1.1em;
+    border-radius: 0.4em;
+    cursor: pointer;
+    margin-left: 0.5em;
+  }
+  button:hover {
+    border: 1px solid plum;
+  }
+  .todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    background-color: #111827;
+    padding: 0 1em;
+    border-radius: 0.6em;
+    margin: 1em 0;
+  }
 }
