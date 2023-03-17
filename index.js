@@ -2,9 +2,8 @@
 const form = document.getElementById("todoform");
 const todoInput = document.getElementById("newtodo");
 const todosListEl = document.getElementById("todos-list");
-const notificationEl = document.querySelector(".notification");
+const notificationEl = document.querySelector("#notification");
 
-// VARS
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 let EditTodoId = -1;
 
@@ -135,10 +134,10 @@ function showNotification(msg) {
   notificationEl.innerHTML = msg;
 
   // notification enter
-  notificationEl.classList.add("notif-enter");
+  notificationEl.classList.add("notification");
 
   // notification leave
   setTimeout(() => {
-    notificationEl.classList.remove("notif-enter");
+    notificationEl.classList.add("hide");
   }, 2000);
 }
