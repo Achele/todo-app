@@ -37,6 +37,8 @@ input {
   padding: 1em 2em;
   width: 50%;
   margin-bottom: 1em;
+  color: white;
+  font-size: 1.3em;
 }
 button {
   background: linear-gradient(
