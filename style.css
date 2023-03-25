@@ -10,7 +10,6 @@
 } */
 
 body {
-  /* width: 100%; */
   background: #1e1e1e;
   color: white;
 }
@@ -32,11 +31,12 @@ form {
 }
 input {
   background: #1f2937;
-  border: 1px solid #ffffff;
-  border-radius: 1em;
+  border-radius: 1em 0 0 1em;
   padding: 1em 2em;
-  width: 50%;
+  width: 100%;
   margin-bottom: 1em;
+  color: whitesmoke;
+  border-style: none;
 }
 button {
   background: linear-gradient(
@@ -45,20 +45,30 @@ button {
     #8b5cf6 100%,
     rgba(255, 255, 255, 0) 100%
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
-  padding: 0.5em 1em;
+  padding-top: 0.3em;
   font-size: 1.5em;
   border: none;
+  border-radius: 0 0.5em 0.5em 0;
   line-height: 32px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+  color: #fff;
+}
+#todos-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em 2em;
 }
 .todo {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  width: 70%;
+  width: 100%;
   background-color: #111827;
   padding: 0 1em;
   border-radius: 0.6em;
@@ -101,26 +111,6 @@ button {
 }
 
 @media (min-width: 60rem) {
-  form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  input {
-    width: 60%;
-    border: none;
-  }
-  button {
-    border: 1px solid purple;
-    padding: 0.5em 1em;
-    font-size: 1.1em;
-    border-radius: 0.4em;
-    cursor: pointer;
-    margin-left: 0.5em;
-  }
-  button:hover {
-    border: 1px solid plum;
-  }
   .todo {
     display: flex;
     align-items: center;
